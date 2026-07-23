@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nestjs/nest/master/public/logo-small.svg" alt="ChitChat" width="120" />
+  <img src="client/public/logo.png" alt="ChitChat Logo" width="120" />
 </p>
 
 <h1 align="center">ChitChat</h1>
