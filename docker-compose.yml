@@ -1,0 +1,51 @@
+services:
+  # MongoDB Database Container
+  mongo:
+    image: mongo:7.0
+    container_name: chitchat-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: chitchat
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # NestJS Backend Server (REST API + Socket.IO + WebRTC Signaling)
+  server:
+    build:
+      context: ./server
+    container_name: chitchat-server
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo:27017/chitchat
+      JWT_SECRET: chitchat_jwt_secret_key_change_in_production
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  # Nuxt 3 Frontend Client
+  client:
+    build:
+      context: ./client
+    container_name: chitchat-client
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      PORT: 3000
+      NUXT_PUBLIC_API_BASE: http://localhost:3000
+      NUXT_PUBLIC_SOCKET_URL: http://localhost:3000
+    depends_on:
+      - server
+
+volumes:
+  mongo_data:
