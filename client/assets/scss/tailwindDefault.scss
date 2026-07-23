@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flexCenter {
+  @apply flex justify-center items-center;
+}
+
+.flexBetween {
+  @apply flex justify-between items-center;
+}
+
+.flexAround {
+  @apply flex justify-around items-center;
+}
+
+.flexStart {
+  @apply flex items-center justify-start;
+}
+
+.flexEnd {
+  @apply flex items-center justify-end;
+}

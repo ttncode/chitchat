@@ -1,0 +1,47 @@
+// Variables
+:root {
+  // System
+  --system_primary_color: #fb1159;
+  --system_title_color: #495057;
+  --system_text_color: #687083;
+  --system_white_color: #fff;
+  --system_black_color: #000;
+  --system_button_width: 146px;
+  --system_button_height: 48px;
+
+  // Header
+  --header_height: 76px;
+  --header_background_color: #fff;
+
+  // Login
+  --login_screen_width: 1230px;
+  --login_logo_width: 190px;
+
+  --login_background_color: #fff;
+  --login_placeholder_color: #afafaf;
+  --login_icon_color: #687083;
+  --login_link_color: #007bff;
+  --login_span_color: #202e3b;
+
+  // Search
+  --search_width_default: 200px;
+  --search_height_default: 50px;
+
+  --search_default_background: #f9f9fd;
+  --search_default_outline: #80bdff;
+  --search_text_color: #414347;
+
+  // Banner
+  --banner_height_default: 500px;
+
+  // Footer
+  --footer_text_color: #5b5c6e;
+  --footer_background_color: #1e2147;
+
+  // Course details
+  --course_detail_header_height: 80px;
+  --course_detail_player_height: 600px;
+  --course_detail_star_color: #ffc107;
+  --course_detail_title_color: #202e3b;
+  --course_detail_text_color: #212529;
+}

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&display=swap');
+@import 'variables';
+@import 'animations/transitions';
+
+:root {
+}
+
+// components
+// component::scrollbar
+// components
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.gray.100');
+  border-left: 1px solid theme('colors.gray.200');
+}
+::-webkit-scrollbar-thumb {
+  border: 4px solid theme('colors.gray.100');
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: theme('colors.slate.300');
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.slate.400');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.login-banner-background {
+  background: linear-gradient(180deg, rgba(255, 234, 239, 0.1), rgba(64, 232, 221, 0.1));
+}
