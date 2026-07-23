@@ -1,0 +1,3 @@
+<template>
+  <Chatroom />
+</template>
